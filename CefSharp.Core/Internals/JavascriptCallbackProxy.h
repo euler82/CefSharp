@@ -1,4 +1,4 @@
-// Copyright © 2010-2015 The CefSharp Authors. All rights reserved.
+// Copyright © 2010-2016 The CefSharp Authors. All rights reserved.
 //
 // Use of this source code is governed by a BSD-style license that can be found in the LICENSE file.
 
@@ -25,13 +25,12 @@ namespace CefSharp
             PendingTaskRepository<JavascriptResponse^>^ _pendingTasks;
             bool _disposed;
 
-            CefRefPtr<CefProcessMessage> CreateCallMessage(int64 doneCallbackId, cli::array<Object^>^ parameters);
             CefRefPtr<CefProcessMessage> CreateDestroyMessage();
             IBrowser^ GetBrowser();
             void DisposedGuard();
         public:
             JavascriptCallbackProxy(JavascriptCallback^ callback, PendingTaskRepository<JavascriptResponse^>^ pendingTasks, WeakReference^ browserAdapter)
-                :_callback(callback), _pendingTasks(pendingTasks)
+                :_callback(callback), _pendingTasks(pendingTasks), _disposed(false)
             {
                 _browserAdapter = browserAdapter;
             }
@@ -55,6 +54,11 @@ namespace CefSharp
             virtual Task<JavascriptResponse^>^ ExecuteAsync(cli::array<Object^>^ parameters);
 
             virtual property bool IsDisposed
+            {
+                bool get();
+            }
+
+            virtual property bool CanExecute
             {
                 bool get();
             }

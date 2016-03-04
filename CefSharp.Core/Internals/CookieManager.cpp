@@ -1,4 +1,4 @@
-// Copyright © 2010-2015 The CefSharp Project. All rights reserved.
+// Copyright © 2010-2016 The CefSharp Project. All rights reserved.
 //
 // Use of this source code is governed by a BSD-style license that can be found in the LICENSE file.
 
@@ -86,13 +86,21 @@ namespace CefSharp
             return _cookieManager->VisitUrlCookies(StringUtils::ToNative(url), includeHttpOnly, cookieVisitor);
         }
 
-        bool CookieManager::FlushStore(ICompletionCallback^ handler)
+        Task<bool>^ CookieManager::FlushStoreAsync()
         {
             ThrowIfDisposed();
 
+            auto handler = gcnew TaskCompletionHandler();
+
             CefRefPtr<CefCompletionCallback> wrapper = new CefCompletionCallbackAdapter(handler);
 
-            return _cookieManager->FlushStore(wrapper);
+            if (_cookieManager->FlushStore(wrapper))
+            {
+                return handler->Task;
+            }
+
+            //returns false if cookies cannot be accessed.
+            return TaskExtensions::FromResult(false);
         }
     }
 }

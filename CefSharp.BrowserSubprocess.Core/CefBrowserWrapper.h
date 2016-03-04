@@ -1,4 +1,4 @@
-﻿// Copyright © 2010-2015 The CefSharp Authors. All rights reserved.
+﻿// Copyright © 2010-2016 The CefSharp Authors. All rights reserved.
 //
 // Use of this source code is governed by a BSD-style license that can be found in the LICENSE file.
 
@@ -28,7 +28,7 @@ namespace CefSharp
         MCefRefPtr<CefBrowser> _cefBrowser;
     
     internal:
-        property JavascriptRootObjectWrapper^ JavascriptRootObjectWrapper;
+        property ConcurrentDictionary<int64, JavascriptRootObjectWrapper^>^ JavascriptRootObjectWrappers;
 
     public:
         CefBrowserWrapper(CefRefPtr<CefBrowser> cefBrowser)
@@ -36,6 +36,8 @@ namespace CefSharp
             _cefBrowser = cefBrowser;
             BrowserId = cefBrowser->GetIdentifier();
             IsPopup = cefBrowser->IsPopup();
+
+            JavascriptRootObjectWrappers = gcnew ConcurrentDictionary<int64, JavascriptRootObjectWrapper^>();
         }
         
         !CefBrowserWrapper()
@@ -47,11 +49,14 @@ namespace CefSharp
         {
             this->!CefBrowserWrapper();
 
-            if (JavascriptRootObjectWrapper != nullptr)
+            if (JavascriptRootObjectWrappers != nullptr)
             {
-                delete JavascriptRootObjectWrapper;
+                for each(KeyValuePair<int64, JavascriptRootObjectWrapper^> entry in JavascriptRootObjectWrappers)
+                {
+                    delete entry.Value;
+                }
 
-                JavascriptRootObjectWrapper = nullptr;
+                JavascriptRootObjectWrappers = nullptr;
             }
         }
 

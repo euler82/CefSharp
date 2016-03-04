@@ -237,6 +237,33 @@ namespace CefSharp.Example.Properties {
         /// * @license
         /// * Dual licensed under the MIT and GPL licenses.
         /// */
+        ///; (function () {
+        ///    // CommonJS
+        ///    typeof (require) != &apos;undefined&apos; ? SyntaxHighlighter = require(&apos;shCore&apos;).SyntaxH [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string assets_js_shBrushJScript_js {
+            get {
+                return ResourceManager.GetString("assets_js_shBrushJScript_js", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to /**
+        /// * SyntaxHighlighter
+        /// * http://alexgorbatchev.com/SyntaxHighlighter
+        /// *
+        /// * SyntaxHighlighter is donationware. If you are using it, please donate.
+        /// * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+        /// *
+        /// * @version
+        /// * 3.0.83 (July 02 2010)
+        /// * 
+        /// * @copyright
+        /// * Copyright (C) 2004-2010 Alex Gorbatchev.
+        /// *
+        /// * @license
+        /// * Dual licensed under the MIT and GPL licenses.
+        /// */
         ///eval(function (p, a, c, k, e, d) { e = function (c) { return (c &lt; a ? &apos;&apos; : e(parseInt(c / a))) + ((c = c % a) &gt; 35 ? S [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string assets_js_shCore_js {
@@ -357,12 +384,12 @@ namespace CefSharp.Example.Properties {
         /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
         ///&lt;html&gt;
-        ///	&lt;head&gt;
-        ///		&lt;title&gt;Framed WebGL Test&lt;/title&gt;
-        ///	&lt;/head&gt;
-        ///	&lt;body&gt;
+        ///    &lt;head&gt;
+        ///        &lt;title&gt;Framed WebGL Test&lt;/title&gt;
+        ///    &lt;/head&gt;
+        ///    &lt;body&gt;
         ///        &lt;iframe width=&quot;600&quot; height=&quot;400&quot; src=&quot;http://webglsamples.org/aquarium/aquarium.html&quot;&gt;&lt;/iframe&gt;
-        ///	&lt;/body&gt;
+        ///    &lt;/body&gt;
         ///&lt;/html&gt;
         ///.
         /// </summary>
@@ -397,15 +424,36 @@ namespace CefSharp.Example.Properties {
         ///   Looks up a localized string similar to &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
         ///&lt;html&gt;
         ///    &lt;head&gt;
+        ///        &lt;title&gt;Multi Binding Test&lt;/title&gt;
+        ///        &lt;script type=&quot;text/javascript&quot;&gt;
+        ///            var DYNAMIC_CONTAINER_COUNT = 6;
+        ///            var PRIMES = [1453, 4273, 6277, 9923, 26099, 41231];
+        ///            function replaceContainer(id, src)
+        ///            {
+        ///                console.log(&quot;Replacing Container &quot; + id);
+        ///                var container = document.getElementById(&quot;dynamicContainer&quot; + id);
+        ///                var newFram [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string MultiBindingTest {
+            get {
+                return ResourceManager.GetString("MultiBindingTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
+        ///&lt;html&gt;
+        ///    &lt;head&gt;
         ///        &lt;title&gt;Popup Test&lt;/title&gt;
         ///    &lt;/head&gt;
         ///    &lt;body&gt;
         ///        &lt;a href=&quot;https://github.com/CefSharp/CefSharp&quot; target=&quot;_blank&quot;&gt;target=_blank&lt;/a&gt;
         ///        &lt;br /&gt;
         ///        &lt;a href=&quot;#&quot; onclick=&quot;window.open(&apos;https://github.com/CefSharp/CefSharp&apos;)&quot;&gt;window.open()&lt;/a&gt;
-        ///    &lt;/body&gt;
-        ///&lt;/html&gt;
-        ///.
+        ///        &lt;br /&gt;
+        ///        &lt;a href=&quot;#&quot; onclick=&quot;window.open(&apos;custom://cefsharp/BindingTest.html&apos;)&quot;&gt;BindingTest.html&lt;/a&gt;
+        ///        &lt;br /&gt;
+        ///        &lt;a href=&quot;#&quot; onclick [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string PopupTest {
             get {
@@ -414,21 +462,40 @@ namespace CefSharp.Example.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Response Filter Test&lt;/title&gt;
+        ///&lt;/head&gt;
+        ///&lt;body bgcolor=&quot;white&quot;&gt;
+        ///    &lt;p&gt;The text shown below in &lt;font color=&quot;red&quot;&gt;red&lt;/font&gt; has been replaced by the filter. This document is &gt; 32kb in order to exceed the standard output buffer size.&lt;/p&gt;
+        ///    &lt;p&gt;&lt;font color=&quot;red&quot;&gt;REPLACE_THIS_STRING&lt;/font&gt;&lt;/p&gt;
+        ///    &lt;p&gt;0. It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ResponseFilterTest {
+            get {
+                return ResourceManager.GetString("ResponseFilterTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
         ///&lt;html&gt;
-        ///    &lt;head&gt;
-        ///        &lt;title&gt;Scheme Handler Test&lt;/title&gt;
-        ///    &lt;/head&gt;
-        ///    &lt;body&gt;
-        ///        &lt;h1&gt;Success&lt;/h1&gt;
-        ///        &lt;p&gt;Scheme Handler Functioned Correctly&lt;/p&gt;
+        ///&lt;head&gt;
+        ///    &lt;title&gt;Scheme Handler Test&lt;/title&gt;
         ///
-        ///        &lt;form action=&quot;custom://cefsharp/PostDataTest.html&quot; method=&quot;post&quot; target=&quot;_blank&quot;&gt;
-        ///            User:&lt;input type=&quot;text&quot; name=&quot;user&quot; value=&quot;lion&quot; /&gt;
-        ///            &lt;br&gt;
-        ///            Pass:&lt;input type=&quot;text&quot; name=&quot;pass&quot; value=&quot;123&quot; /&gt;
-        ///            &lt;br&gt;
-        ///            &lt;input type [rest of string was truncated]&quot;;.
+        ///    &lt;script type=&quot;text/javascript&quot;&gt;
+        ///        var htmlNode;
+        ///        var newLine = &quot;\n&quot;;
+        ///        var showError = function (text)
+        ///        {
+        ///            if (!htmlNode)
+        ///            {
+        ///                htmlNode = document.createElement(&quot;div&quot;);
+        ///                htmlNode.id = &quot;debugWindow&quot;;
+        ///                document.body.appendChild(htmlNode);
+        ///            }
+        ///
+        ///            htmlNode.innerHTML [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string SchemeTest {
             get {
@@ -437,22 +504,44 @@ namespace CefSharp.Example.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;
+        ///&lt;html lang=&quot;en&quot;&gt;
+        ///&lt;head&gt;
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+        ///    &lt;meta name=&quot;description&quot; content=&quot;&quot;&gt;
+        ///    &lt;meta name=&quot;author&quot; content=&quot;&quot;&gt;
+        ///    &lt;title&gt;ScriptedMethodsTest&lt;/title&gt;
+        ///    &lt;link href=&quot;bootstrap/bootstrap.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+        ///    &lt;link href=&quot;assets/css/shCore.css&quot; rel=&quot;stylesheet&quot;&gt;
+        ///    &lt;link href=&quot;assets/css/shCoreDefault.css&quot; rel=&quot;stylesheet&quot;&gt;
+        ///&lt;/head&gt;
+        ///&lt;body&gt;
+        ///    &lt;div class=&quot;container&quot;&gt;
+        ///        &lt;div  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ScriptedMethodsTest {
+            get {
+                return ResourceManager.GetString("ScriptedMethodsTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0 Transitional//EN&quot;&gt;
         ///&lt;html&gt;
-        ///	&lt;head&gt;
-        ///		&lt;title&gt;Scheme Handler Test&lt;/title&gt;
-        ///	&lt;/head&gt;
-        ///	&lt;body&gt;
+        ///    &lt;head&gt;
+        ///        &lt;title&gt;Tooltip Test&lt;/title&gt;
+        ///    &lt;/head&gt;
+        ///    &lt;body style=&quot;width:500px;&quot;&gt;
         ///        &lt;form&gt;
         ///            &lt;input type=&quot;text&quot; size=25 title=&quot;This is the first tooltip&quot;&gt;
         ///            &lt;br /&gt;
         ///            &lt;input type=&quot;text&quot; size=25 title=&quot;This is the second tooltip&quot;&gt;
         ///            &lt;br /&gt;
-        ///            &lt;select&gt;
-        ///                &lt;option selected&gt;test&lt;/option&gt;
-        ///                &lt;option&gt;one&lt;/option&gt;
-        ///                &lt;option&gt;two&lt;/option&gt;
-        ///            &lt;/select&gt; [rest of string was truncated]&quot;;.
+        ///            &lt;div&gt;
+        ///                &lt;select style=&quot;float: left;&quot;&gt;
+        ///                    &lt;option selected&gt;test&lt;/option&gt;
+        ///                     [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string TooltipTest {
             get {
